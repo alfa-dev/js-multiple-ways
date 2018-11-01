@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+  font-family: cursive;
+  background: #222222;
+  color: #fff;
+}
+
+#board {
+  margin: 0 auto;
+}
+
+.house {
+  display: inline-block;
+  background: rgba(0,0,0, .8);
+  border: 1px solid #222222;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  float: left;
+  border-radius: 5px;
+}
+
+.house.body {
+  background: rgba(255,255,255, .8);
+}
+
+.house.food {
+  background: rgba(255,50,50, .8);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>Vanilla JS Snake game</title>
+  <script src="support.js"></script>
+  <script src="board.js"></script>
+  <script src="snake.js"></script>
+  <script src="game.js"></script>
+  <link rel="stylesheet" href="snake.css">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var cols = 20;
+      var rows = 20;
+
+      game = new Game({
+        scale: 25,
+        speed: 10,
+        cols: cols,
+        rows: rows
+      });
+
+      game.board.generateBoard(document.querySelector('#game'));
+
+      snake = new Snake({cols: cols, rows: rows});
+
+      game.start();
+
+      document.addEventListener('keydown', function(e){
+        switch (e.keyCode) {
+          case 37: snake.left();  break;
+          case 38: snake.up();    break;
+          case 39: snake.right(); break;
+          case 40: snake.down();  break;
+        }
+      });
+    });
+
+  </script>
+</head>
+<body>
+  <h1>Snake Game</h1>
+  <h2>Vanilla JS</h2>
+
+  <div id="game"></div>
+</body>
+</html>
